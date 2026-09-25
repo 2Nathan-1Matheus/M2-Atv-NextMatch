@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NextMatch — Sua plataforma multiesportiva</title>
+<meta name="description" content="NextMatch centraliza a organização de campeonatos, equipes, inscrições e rankings esportivos em um só lugar.">
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Roboto:wght@400;500;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="has-bottom-nav">
+
+<div id="app-header"></div>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-copy">
+        <span class="eyebrow">Plataforma multiesportiva</span>
+        <h1>Mais que um jogo, <em>é superação.</em></h1>
+        <p>O NextMatch centraliza campeonatos, equipes, inscrições, chaveamentos e rankings em um único lugar — chega de planilha e grupo de WhatsApp para organizar competição.</p>
+        <div class="hero-actions">
+          <a href="login.html" class="btn btn-primary">Criar minha conta</a>
+          <a href="competicoes.html" class="btn btn-outline">Ver competições</a>
+        </div>
+        <div class="stat-strip"></div>
+      </div>
+      <div class="hero-figure">
+        <img src="assets/img/banner-hero.jpg" alt="Atletas de futebol, basquete, vôlei e tênis em ação — banner NextMatch" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- PERFIS -->
+  <section class="section">
+    <div class="container">
+      <div class="bracket-divider"><span class="tag">Feito para cada função</span><span class="line"></span></div>
+      <div class="section-head">
+        <h2>Um painel para cada perfil</h2>
+        <p>Atletas, professores e organizadores têm experiências e ferramentas específicas para suas necessidades dentro da plataforma.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card profile-card">
+          <div class="ico" id="icoAtleta"></div>
+          <h3>Atleta</h3>
+          <p>Acompanhe tudo em um lugar só.</p>
+          <ul>
+            <li id="icoCheck1">Inscreva-se em campeonatos</li>
+            <li id="icoCheck2">Acompanhe resultados e rankings</li>
+            <li id="icoCheck3">Visualize sua próxima partida</li>
+          </ul>
+        </div>
+        <div class="card profile-card">
+          <div class="ico" id="icoProfessor"></div>
+          <h3>Professor / Treinador</h3>
+          <p>Gerencie sua equipe com facilidade.</p>
+          <ul>
+            <li>Gerencie atletas e equipes</li>
+            <li>Aprove inscrições e solicitações</li>
+            <li>Acompanhe o desempenho do time</li>
+          </ul>
+        </div>
+        <div class="card profile-card">
+          <div class="ico" id="icoOrganizador"></div>
+          <h3>Organizador</h3>
+          <p>Organize eventos do início ao fim.</p>
+          <ul>
+            <li>Crie campeonatos e categorias</li>
+            <li>Gere chaveamentos automáticos</li>
+            <li>Controle inscrições e participantes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTAQUES -->
+  <section class="section" style="background:var(--bg-alt);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div class="section-head flex-between" style="flex-wrap:wrap;gap:14px;">
+        <div>
+          <div class="bracket-divider" style="margin-bottom:10px;"><span class="tag">Agenda esportiva</span><span class="line"></span></div>
+          <h2 class="mt-0">Competições em destaque</h2>
+        </div>
+        <a href="competicoes.html" class="btn btn-outline">Ver todas</a>
+      </div>
+      <div class="grid grid-3" id="homeCompetitions"></div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="section">
+    <div class="container">
+      <div class="bracket-divider"><span class="tag">Como funciona</span><span class="line"></span></div>
+      <div class="section-head"><h2>Da inscrição ao pódio, em 4 passos</h2></div>
+      <div class="grid grid-4">
+        <div class="card">
+          <div class="chip" style="margin-bottom:12px;">Passo 1</div>
+          <h4>Crie sua conta</h4>
+          <p style="font-size:13px;">Escolha seu perfil — atleta, professor ou organizador — e comece em minutos.</p>
+        </div>
+        <div class="card">
+          <div class="chip" style="margin-bottom:12px;">Passo 2</div>
+          <h4>Encontre ou crie um campeonato</h4>
+          <p style="font-size:13px;">Explore competições abertas ou monte a sua com categorias e regulamento.</p>
+        </div>
+        <div class="card">
+          <div class="chip" style="margin-bottom:12px;">Passo 3</div>
+          <h4>Gerencie inscrições</h4>
+          <p style="font-size:13px;">Equipes e atletas se inscrevem direto pela plataforma, sem planilhas.</p>
+        </div>
+        <div class="card">
+          <div class="chip" style="margin-bottom:12px;">Passo 4</div>
+          <h4>Acompanhe em tempo real</h4>
+          <p style="font-size:13px;">Chaveamentos, resultados e rankings atualizados a cada rodada.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTÍCIAS -->
+  <section class="section" style="background:var(--bg-alt);border-top:1px solid var(--border);">
+    <div class="container">
+      <div class="section-head flex-between" style="flex-wrap:wrap;gap:14px;">
+        <div>
+          <div class="bracket-divider" style="margin-bottom:10px;"><span class="tag">Fique por dentro</span><span class="line"></span></div>
+          <h2 class="mt-0">Últimas notícias</h2>
+        </div>
+        <a href="noticias.html" class="btn btn-outline">Ver todas</a>
+      </div>
+      <div class="grid grid-3" id="homeNews"></div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="section">
+    <div class="container">
+      <div class="card" style="padding:38px 26px;text-align:center;background:linear-gradient(135deg,var(--surface),var(--bg-alt));">
+        <h2 style="margin-bottom:8px;">Seu time te espera.</h2>
+        <p style="max-width:44ch;margin:0 auto 20px;">Cadastre sua equipe ou crie seu próximo campeonato no NextMatch — competa, treine, evolua, vença.</p>
+        <div class="hero-actions" style="justify-content:center;">
+          <a href="login.html" class="btn btn-primary">Começar agora</a>
+          <a href="contato.html" class="btn btn-outline">Falar com a equipe</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="app-footer"></div>
+<div id="app-bottomnav"></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  nmMountChrome("index.html");
+  document.getElementById("icoAtleta").innerHTML = NM_ICO.user;
+  document.getElementById("icoProfessor").innerHTML = NM_ICO.users;
+  document.getElementById("icoOrganizador").innerHTML = NM_ICO.trophy;
+  document.querySelector(".stat-strip").innerHTML = `
+    <div class="stat"><span class="ico">${NM_ICO.users}</span><div><b>50+</b><span>Equipes fortes</span></div></div>
+    <div class="stat"><span class="ico">${NM_ICO.trophy}</span><div><b>18</b><span>Competições organizadas</span></div></div>
+    <div class="stat"><span class="ico">${NM_ICO.chart}</span><div><b>Tempo real</b><span>Resultados atualizados</span></div></div>
+    <div class="stat"><span class="ico">${NM_ICO.calendar}</span><div><b>Toda semana</b><span>Eventos ativos</span></div></div>
+  `;
+</script>
+</body>
+</html>

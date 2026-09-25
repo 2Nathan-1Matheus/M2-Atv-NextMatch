@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meu Perfil · NextMatch</title>
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Roboto:wght@400;500;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="has-bottom-nav">
+
+<div id="app-header"></div>
+
+<main class="section" style="padding-top:34px;" id="perfilRoot">
+  <div class="container" style="max-width:720px;">
+    <div class="bracket-divider"><span class="tag">Conta</span><span class="line"></span></div>
+    <div class="section-head">
+      <h2>Meu perfil</h2>
+      <p>Gerencie suas informações pessoais e de conta.</p>
+    </div>
+
+    <div class="panel flex gap-16" style="flex-wrap:wrap;">
+      <div class="avatar-lg" id="perfilAvatarBox"><span id="perfilAvatarTxt">NM</span></div>
+      <div style="flex:1;min-width:180px;">
+        <label for="perfilFoto" class="btn btn-outline btn-sm">Alterar foto</label>
+        <input type="file" id="perfilFoto" accept="image/*" style="display:none;">
+        <p class="field-hint" style="margin-top:8px;">A foto é usada apenas nesta demonstração e não é enviada a nenhum servidor.</p>
+      </div>
+      <span class="chip" id="perfilTipo">Atleta</span>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head"><h3>Dados pessoais</h3></div>
+      <div class="form-msg" id="perfilMsg"></div>
+      <form id="perfilForm">
+        <div class="field-row">
+          <div class="field"><label for="perfilNome">Nome completo</label><input id="perfilNome" type="text" required></div>
+          <div class="field"><label for="perfilEmail">E-mail</label><input id="perfilEmail" type="email" required></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="perfilTelefone">Telefone</label><input id="perfilTelefone" type="tel" placeholder="(00) 00000-0000"></div>
+          <div class="field"><label for="perfilCidade">Cidade</label><input id="perfilCidade" type="text" placeholder="Sua cidade"></div>
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar alterações</button>
+      </form>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head"><h3>Segurança</h3></div>
+      <div class="field-row">
+        <div class="field"><label for="perfilSenhaAtual">Senha atual</label><input id="perfilSenhaAtual" type="password" placeholder="••••••••"></div>
+        <div class="field"><label for="perfilSenhaNova">Nova senha</label><input id="perfilSenhaNova" type="password" placeholder="••••••••"></div>
+      </div>
+      <button type="button" class="btn btn-outline">Atualizar senha</button>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head"><h3>Sessão</h3></div>
+      <p style="margin-bottom:14px;">Você está conectado nesta demonstração. Ao sair, retornará à página inicial.</p>
+      <button type="button" class="btn btn-danger" onclick="nmLogout(event)">Sair da conta</button>
+    </div>
+  </div>
+</main>
+
+<div id="app-footer"></div>
+<div id="app-bottomnav"></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  nmEnsureDemoSession("atleta","Convidado NextMatch");
+  nmMountChrome("perfil.html");
+</script>
+</body>
+</html>
