@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel do Organizador · NextMatch</title>
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Roboto:wght@400;500;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="has-bottom-nav">
+
+<div id="app-header"></div>
+
+<div class="dash-shell container" id="dashOrgRoot">
+  <div id="app-sidebar"></div>
+  <main class="dash-main">
+    <div class="dash-head">
+      <div>
+        <h1>Olá, <span id="dashOrgNome">Organizador(a)</span> 👋</h1>
+        <p>Crie campeonatos, defina categorias e acompanhe os chaveamentos.</p>
+      </div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi"><div class="ico" id="kpiIco1"></div><b>6</b><span>Campeonatos criados</span></div>
+      <div class="kpi"><div class="ico" id="kpiIco2"></div><b>3</b><span>Inscrições abertas</span></div>
+      <div class="kpi"><div class="ico" id="kpiIco3"></div><b>302</b><span>Equipes participantes</span></div>
+      <div class="kpi"><div class="ico" id="kpiIco4"></div><b>1</b><span>Em andamento</span></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head"><h3>Criar novo campeonato</h3></div>
+      <div class="form-msg" id="novoCampMsg"></div>
+      <form id="novoCampeonatoForm">
+        <div class="field-row">
+          <div class="field"><label for="novoCampNome">Nome do campeonato</label><input id="novoCampNome" type="text" placeholder="Ex: Copa NextMatch de Basquete" required></div>
+          <div class="field"><label for="novoCampModalidade">Modalidade</label>
+            <select id="novoCampModalidade">
+              <option>Futebol</option><option>Vôlei</option><option>Basquete</option><option>Tênis</option><option>Atletismo</option><option>Natação</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="novoCampCategoria">Categoria</label><input id="novoCampCategoria" type="text" placeholder="Ex: Sub-17 Feminino"></div>
+          <div class="field"><label for="novoCampData">Data de início</label><input id="novoCampData" type="date"></div>
+        </div>
+        <div class="field"><label for="novoCampRegulamento">Regulamento (resumo)</label><textarea id="novoCampRegulamento" placeholder="Formato de disputa, número de equipes, critérios de desempate..."></textarea></div>
+        <button type="submit" class="btn btn-primary">Criar campeonato</button>
+      </form>
+      <div id="orgRecemCriados" style="margin-top:16px;display:none;"></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <h3>Meus campeonatos</h3>
+      </div>
+      <div id="orgCampeonatos"></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <h3>Chaveamento — Copa NextMatch de Futebol</h3>
+        <span class="chip gray">Mata-mata · Sub-20</span>
+      </div>
+      <div class="bracket">
+        <div class="bracket-round">
+          <div class="r-title">Quartas</div>
+          <div class="match">
+            <div class="m-team win"><span>Falcões FC</span><span>3</span></div>
+            <div class="m-team"><span>Real Sorocaba</span><span>1</span></div>
+          </div>
+          <div class="match">
+            <div class="m-team"><span>Estrela Azul</span><span>0</span></div>
+            <div class="m-team win"><span>Panteras Futsal</span><span>2</span></div>
+          </div>
+          <div class="match">
+            <div class="m-team win"><span>União Atlética</span><span>2</span></div>
+            <div class="m-team"><span>Vila Nova FC</span><span>2</span></div>
+          </div>
+          <div class="match">
+            <div class="m-team"><span>Rangers SP</span><span>1</span></div>
+            <div class="m-team win"><span>Guarani Jr.</span><span>3</span></div>
+          </div>
+        </div>
+        <div class="bracket-round">
+          <div class="r-title">Semifinal</div>
+          <div class="match">
+            <div class="m-team win"><span>Falcões FC</span><span>2</span></div>
+            <div class="m-team"><span>Panteras Futsal</span><span>1</span></div>
+          </div>
+          <div class="match">
+            <div class="m-team"><span>União Atlética</span><span>—</span></div>
+            <div class="m-team"><span>Guarani Jr.</span><span>—</span></div>
+          </div>
+        </div>
+        <div class="bracket-round">
+          <div class="r-title">Final</div>
+          <div class="match">
+            <div class="m-team"><span>Falcões FC</span><span>—</span></div>
+            <div class="m-team"><span>A definir</span><span>—</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div id="app-footer"></div>
+<div id="app-bottomnav"></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  nmEnsureDemoSession("organizador","Rodrigo Nunes");
+  nmMountChrome("dashboard-gerenciador.html", { dashboardRole:"organizador" });
+  document.getElementById("kpiIco1").innerHTML = NM_ICO.trophy;
+  document.getElementById("kpiIco2").innerHTML = NM_ICO.bell;
+  document.getElementById("kpiIco3").innerHTML = NM_ICO.users;
+  document.getElementById("kpiIco4").innerHTML = NM_ICO.bracket;
+</script>
+</body>
+</html>

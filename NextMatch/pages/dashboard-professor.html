@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel do Professor · NextMatch</title>
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Roboto:wght@400;500;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="has-bottom-nav">
+
+<div id="app-header"></div>
+
+<div class="dash-shell container" id="dashProfRoot">
+  <div id="app-sidebar"></div>
+  <main class="dash-main">
+    <div class="dash-head">
+      <div>
+        <h1>Olá, <span id="dashProfNome">Professor(a)</span> 👋</h1>
+        <p>Gerencie suas equipes, atletas e inscrições em um só lugar.</p>
+      </div>
+      <a href="equipes.html" class="btn btn-primary">Ver todas as equipes</a>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi"><div class="ico" id="kpiIco1"></div><b>3</b><span>Equipes gerenciadas</span></div>
+      <div class="kpi"><div class="ico" id="kpiIco2"></div><b>44</b><span>Atletas vinculados</span></div>
+      <div class="kpi"><div class="ico" id="kpiIco3"></div><b>3</b><span>Solicitações pendentes</span></div>
+      <div class="kpi"><div class="ico" id="kpiIco4"></div><b>2</b><span>Competições ativas</span></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <h3>Minhas equipes</h3>
+        <a href="equipes.html" class="btn btn-ghost btn-sm">Gerenciar todas</a>
+      </div>
+      <div id="profEquipes"></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head"><h3>Solicitações de inscrição</h3></div>
+      <div id="profSolicitacoes"></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head"><h3>Adicionar atleta à equipe</h3></div>
+      <div class="form-msg" id="addAtletaMsg"></div>
+      <form id="addAtletaForm">
+        <div class="field-row">
+          <div class="field"><label for="atletaNome">Nome do atleta</label><input id="atletaNome" type="text" placeholder="Nome completo" required></div>
+          <div class="field"><label for="atletaEquipe">Equipe</label>
+            <select id="atletaEquipe" required>
+              <option value="">Selecione</option>
+              <option>Falcões FC</option>
+              <option>Vôlei Fênix</option>
+              <option>Panteras Futsal</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="atletaIdade">Idade</label><input id="atletaIdade" type="number" min="10" max="60" placeholder="Ex: 17"></div>
+          <div class="field"><label for="atletaPosicao">Posição / função</label><input id="atletaPosicao" type="text" placeholder="Ex: Atacante"></div>
+        </div>
+        <button type="submit" class="btn btn-primary">Adicionar atleta</button>
+      </form>
+    </div>
+  </main>
+</div>
+
+<div id="app-footer"></div>
+<div id="app-bottomnav"></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  nmEnsureDemoSession("professor","Profª. Camila Rocha");
+  nmMountChrome("dashboard-professor.html", { dashboardRole:"professor" });
+  document.getElementById("kpiIco1").innerHTML = NM_ICO.users;
+  document.getElementById("kpiIco2").innerHTML = NM_ICO.user;
+  document.getElementById("kpiIco3").innerHTML = NM_ICO.bell;
+  document.getElementById("kpiIco4").innerHTML = NM_ICO.trophy;
+</script>
+</body>
+</html>

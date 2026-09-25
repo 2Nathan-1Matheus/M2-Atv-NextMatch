@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contato · NextMatch</title>
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Roboto:wght@400;500;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="has-bottom-nav">
+
+<div id="app-header"></div>
+
+<main class="section" style="padding-top:34px;">
+  <div class="container">
+    <div class="bracket-divider"><span class="tag">Suporte</span><span class="line"></span></div>
+    <div class="section-head">
+      <h2>Fale conosco</h2>
+      <p>Dúvidas, sugestões ou suporte técnico — nossa equipe responde em até 2 dias úteis.</p>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="panel">
+        <div class="form-msg" id="contatoMsg"></div>
+        <form id="contatoForm">
+          <div class="field-row">
+            <div class="field"><label for="ctNome">Nome</label><input id="ctNome" type="text" placeholder="Seu nome" required></div>
+            <div class="field"><label for="ctEmail">E-mail</label><input id="ctEmail" type="email" placeholder="seuemail@exemplo.com" required></div>
+          </div>
+          <div class="field"><label for="ctAssunto">Assunto</label>
+            <select id="ctAssunto">
+              <option>Dúvida sobre cadastro</option>
+              <option>Suporte técnico</option>
+              <option>Parceria / organização de evento</option>
+              <option>Outro</option>
+            </select>
+          </div>
+          <div class="field"><label for="ctMensagem">Mensagem</label><textarea id="ctMensagem" placeholder="Como podemos ajudar?" required></textarea></div>
+          <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h3 style="margin-top:0;">Outros canais</h3>
+        <div class="list-row"><div class="thumb" id="icoPhone"></div><div class="info"><b>Telefone / WhatsApp</b><span>(11) 4000-1234</span></div></div>
+        <div class="list-row"><div class="thumb" id="icoMail"></div><div class="info"><b>E-mail</b><span>suporte@nextmatch.com.br</span></div></div>
+        <div class="list-row"><div class="thumb" id="icoPin"></div><div class="info"><b>Sede</b><span>São Paulo/SP — Brasil</span></div></div>
+        <h4 style="margin:20px 0 10px;font-size:13px;">Redes sociais</h4>
+        <div class="social-row" id="contatoSocialRow">
+          <a href="#" aria-label="Instagram"></a>
+          <a href="#" aria-label="WhatsApp"></a>
+          <a href="#" aria-label="YouTube"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div id="app-footer"></div>
+<div id="app-bottomnav"></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  nmMountChrome("contato.html");
+  document.getElementById("icoPhone").innerHTML = NM_ICO.phone;
+  document.getElementById("icoMail").innerHTML = NM_ICO.news;
+  document.getElementById("icoPin").innerHTML = NM_ICO.pin;
+  const socialIcons = [NM_ICO.instagram, NM_ICO.whatsapp, NM_ICO.youtube];
+  document.querySelectorAll("#contatoSocialRow a").forEach((a,i)=>a.innerHTML = socialIcons[i]);
+</script>
+</body>
+</html>
