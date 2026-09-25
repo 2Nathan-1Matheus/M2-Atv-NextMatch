@@ -1,7 +1,7 @@
 # 📅 Cronograma Inicial
 
-| Etapa | Status |
-|---|---|
+| Etapa | Status | Responsáveis |
+|---|---|---|
 | Planejamento | ✅ Concluído | Grupo |
 | Identidade Visual | ✅ Concluído | Grupo |
 | Estruturação do Projeto | ✅ Concluído | Grupo |
