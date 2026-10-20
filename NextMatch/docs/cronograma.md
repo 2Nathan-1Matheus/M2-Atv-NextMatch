@@ -11,5 +11,5 @@
 | Banco de Dados | 🔄 Em andamento | Nathan R. | 11/11/2026 |
 | Sistema de Login | 🔄 Em andamento | Nathan G. | 14/11/2026 |
 | Integração das Funcionalidades | 🔄 Em andamento | Nathan R. | 17/11/2026 |
-| Testes e Correções | ⏳ A ser definido | Matheus T. | 19-20/11/2026 |
+| Testes e Correções | ⏳ A ser definido | Grupo | 19-20/11/2026 |
 | Publicação do Projeto | ⏳ A ser definido | Grupo | 20/11/2026 |
