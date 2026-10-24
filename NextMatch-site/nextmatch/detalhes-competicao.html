@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detalhes da Competição · NextMatch</title>
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Roboto:wght@400;500;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="has-bottom-nav">
+
+<div id="app-header"></div>
+
+<main class="section" style="padding-top:34px;" id="compDetail">
+  <div class="container">
+    <a href="competicoes.html" class="faint" style="font-size:13px;">← Voltar para competições</a>
+
+    <div class="card" style="margin-top:18px;display:flex;gap:18px;flex-wrap:wrap;align-items:center;">
+      <div class="thumb" id="compIcon" style="width:64px;height:64px;border-radius:16px;background:var(--surface-2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--accent);"></div>
+      <div style="flex:1;min-width:220px;">
+        <div class="flex gap-8" style="margin-bottom:6px;" id="compStatus"></div>
+        <h1 id="compNome" style="font-size:24px;margin:0 0 4px;">Carregando...</h1>
+        <p id="compModalidade" style="margin:0;"></p>
+      </div>
+      <a href="login.html" class="btn btn-primary">Inscrever equipe</a>
+    </div>
+
+    <div class="grid grid-3" style="margin-top:22px;">
+      <div class="card"><span class="faint" style="font-size:12px;">Data</span><h4 id="compData" style="margin:6px 0 0;font-size:15px;"></h4></div>
+      <div class="card"><span class="faint" style="font-size:12px;">Local</span><h4 id="compLocal" style="margin:6px 0 0;font-size:15px;"></h4></div>
+      <div class="card"><span class="faint" style="font-size:12px;">Premiação</span><h4 id="compPremiacao" style="margin:6px 0 0;font-size:15px;"></h4></div>
+    </div>
+
+    <div class="panel" style="margin-top:26px;">
+      <div class="tabs">
+        <button class="active" data-tab="reg">Regulamento</button>
+        <button data-tab="part">Participantes</button>
+        <button data-tab="premio">Premiação</button>
+      </div>
+      <div class="tab-pane" data-pane="reg">
+        <p id="compRegulamento" style="max-width:70ch;"></p>
+      </div>
+      <div class="tab-pane" data-pane="part" style="display:none;">
+        <p class="faint" id="compEquipes" style="margin-bottom:10px;font-size:13px;"></p>
+        <div id="compParticipantes"></div>
+      </div>
+      <div class="tab-pane" data-pane="premio" style="display:none;">
+        <div class="list-row"><div class="thumb">${''}</div><div class="info"><b>1º lugar</b><span>Troféu + premiação em dinheiro</span></div></div>
+        <div class="list-row"><div class="thumb">${''}</div><div class="info"><b>2º e 3º lugar</b><span>Medalhas de honra ao mérito</span></div></div>
+        <div class="list-row"><div class="thumb">${''}</div><div class="info"><b>Artilheiro / destaque</b><span>Reconhecimento especial</span></div></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div id="app-footer"></div>
+<div id="app-bottomnav"></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  nmMountChrome("competicoes.html");
+  document.querySelectorAll('[data-pane="premio"] .thumb').forEach(el=>el.innerHTML = NM_ICO.trophy);
+</script>
+</body>
+</html>

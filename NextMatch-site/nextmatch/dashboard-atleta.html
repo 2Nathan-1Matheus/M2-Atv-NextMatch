@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel do Atleta · NextMatch</title>
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Roboto:wght@400;500;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="has-bottom-nav">
+
+<div id="app-header"></div>
+
+<div class="dash-shell container" id="dashAtletaRoot">
+  <div id="app-sidebar"></div>
+  <main class="dash-main">
+    <div class="dash-head">
+      <div>
+        <h1>Olá, <span id="dashAtletaNome">Atleta</span> 👋</h1>
+        <p>Aqui está um resumo das suas competições e resultados.</p>
+      </div>
+      <a href="competicoes.html" class="btn btn-primary">Explorar competições</a>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi"><div class="ico" id="kpiIco1"></div><b>3</b><span>Inscrições ativas</span></div>
+      <div class="kpi"><div class="ico" id="kpiIco2"></div><b>2º</b><span>Posição no ranking</span></div>
+      <div class="kpi"><div class="ico" id="kpiIco3"></div><b>5</b><span>Vitórias na temporada</span></div>
+      <div class="kpi"><div class="ico" id="kpiIco4"></div><b>1</b><span>Próxima partida</span></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <h3>Minhas inscrições</h3>
+        <a href="competicoes.html" class="btn btn-ghost btn-sm">Ver competições</a>
+      </div>
+      <div id="atletaInscricoes"></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <h3>Resultados recentes</h3>
+        <a href="ranking.html" class="btn btn-ghost btn-sm">Ver ranking</a>
+      </div>
+      <div id="atletaResultados"></div>
+    </div>
+  </main>
+</div>
+
+<div id="app-footer"></div>
+<div id="app-bottomnav"></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  nmEnsureDemoSession("atleta","Lucas Martins");
+  nmMountChrome("dashboard-atleta.html", { dashboardRole:"atleta" });
+  document.getElementById("kpiIco1").innerHTML = NM_ICO.trophy;
+  document.getElementById("kpiIco2").innerHTML = NM_ICO.rank;
+  document.getElementById("kpiIco3").innerHTML = NM_ICO.chart;
+  document.getElementById("kpiIco4").innerHTML = NM_ICO.calendar;
+</script>
+</body>
+</html>
