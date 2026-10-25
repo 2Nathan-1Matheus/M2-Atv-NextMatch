@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entrar · NextMatch</title>
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Roboto:wght@400;500;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div id="app-header"></div>
+
+<main class="auth-wrap">
+  <div class="container">
+    <div class="auth-card">
+      <div class="text-center" style="margin-bottom:24px;">
+        <img src="assets/img/logo.png" alt="NextMatch" style="height:46px;margin:0 auto 14px;">
+        <h1 id="authTitle" style="font-size:22px;margin-bottom:4px;">Entrar na plataforma</h1>
+        <p style="margin:0;">Selecione seu perfil para continuar</p>
+      </div>
+
+      <div class="role-tabs">
+        <button type="button" class="active" data-role="atleta" id="roleAtleta"></button>
+        <button type="button" data-role="professor" id="roleProfessor"></button>
+        <button type="button" data-role="organizador" id="roleOrganizador"></button>
+      </div>
+
+      <div class="card">
+        <form id="loginForm">
+          <div class="field" id="nameField" style="display:none;">
+            <label for="loginNome">Nome completo</label>
+            <input type="text" id="loginNome" placeholder="Seu nome">
+          </div>
+          <div class="field">
+            <label for="loginEmail">E-mail</label>
+            <input type="email" id="loginEmail" placeholder="seuemail@exemplo.com" required>
+          </div>
+          <div class="field">
+            <label for="loginSenha">Senha</label>
+            <input type="password" id="loginSenha" placeholder="••••••••" required minlength="4">
+          </div>
+          <div class="flex-between" style="margin-bottom:20px;">
+            <label class="checkbox-row"><input type="checkbox"> Lembrar de mim</label>
+            <a href="#" style="font-size:13px;color:var(--accent);">Esqueci a senha</a>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" id="authSubmit">Entrar</button>
+          <p class="field-hint text-center" style="margin-top:14px;">Ambiente de demonstração — qualquer e-mail e senha funcionam para explorar a plataforma.</p>
+        </form>
+      </div>
+
+      <p class="auth-switch" id="authModeLink">Ainda não tem conta? <a href="#">Cadastre-se</a></p>
+    </div>
+  </div>
+</main>
+
+<div id="app-footer"></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  nmMountChrome("login.html");
+  document.getElementById("roleAtleta").innerHTML = NM_ICO.user + "<span>Atleta</span>";
+  document.getElementById("roleProfessor").innerHTML = NM_ICO.users + "<span>Professor</span>";
+  document.getElementById("roleOrganizador").innerHTML = NM_ICO.trophy + "<span>Organizador</span>";
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Equipes · NextMatch</title>
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Roboto:wght@400;500;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="has-bottom-nav">
+
+<div id="app-header"></div>
+
+<main class="section" style="padding-top:34px;">
+  <div class="container">
+    <div class="bracket-divider"><span class="tag">Comunidade</span><span class="line"></span></div>
+    <div class="section-head">
+      <h2>Equipes cadastradas</h2>
+      <p>Conheça as equipes que competem na plataforma NextMatch.</p>
+    </div>
+
+    <div class="filter-bar">
+      <select id="teamFiltroModalidade">
+        <option value="">Todas as modalidades</option>
+        <option>Futebol</option><option>Vôlei</option><option>Basquete</option><option>Tênis</option><option>Atletismo</option><option>Natação</option>
+      </select>
+      <input type="search" id="teamSearch" placeholder="Buscar equipe...">
+    </div>
+
+    <div class="grid grid-3" id="teamsGrid"></div>
+  </div>
+</main>
+
+<div id="app-footer"></div>
+<div id="app-bottomnav"></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/main.js"></script>
+<script>nmMountChrome("equipes.html");</script>
+</body>
+</html>

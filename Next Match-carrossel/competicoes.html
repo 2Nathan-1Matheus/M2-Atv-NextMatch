@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Competições · NextMatch</title>
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Roboto:wght@400;500;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="has-bottom-nav">
+
+<div id="app-header"></div>
+
+<main class="section" style="padding-top:34px;">
+  <div class="container">
+    <div class="bracket-divider"><span class="tag">Agenda esportiva</span><span class="line"></span></div>
+    <div class="section-head">
+      <h2>Competições</h2>
+      <p>Campeonatos ativos, categorias e modalidades disponíveis na plataforma.</p>
+    </div>
+
+    <div class="filter-bar">
+      <select id="filtroModalidade">
+        <option value="">Todas as modalidades</option>
+        <option>Futebol</option><option>Vôlei</option><option>Basquete</option><option>Tênis</option><option>Atletismo</option><option>Natação</option>
+      </select>
+      <select id="filtroStatus">
+        <option value="">Todos os status</option>
+        <option>Inscrições abertas</option><option>Em andamento</option><option>Em breve</option><option>Encerrado</option>
+      </select>
+      <input type="search" id="filtroBusca" placeholder="Buscar competição...">
+    </div>
+
+    <div class="grid grid-3" id="compGrid"></div>
+  </div>
+</main>
+
+<div id="app-footer"></div>
+<div id="app-bottomnav"></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/main.js"></script>
+<script>nmMountChrome("competicoes.html");</script>
+</body>
+</html>
